@@ -1,0 +1,60 @@
+:root{
+  --bg:#0b0f14; /* fondo */
+  --card:#121923; /* paneles */
+  --text:#e9f1ff; /* texto */
+  --accent:#00d1ff; /* acentos */
+  --danger:#ff4d6d; /* daño */
+}
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background: radial-gradient(1200px 600px at 30% 20%, #0f1520 0%, var(--bg) 60%);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  overflow:hidden;
+}
+
+.hud{
+  position:fixed; inset:16px 16px auto 16px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; pointer-events:none; z-index:10;
+}
+.title{ margin:0 0 6px 0; font-size:20px; letter-spacing:.5px; color:#bfe8ff; }
+.stats{ display:flex; gap:12px; font-weight:600; }
+.stats span{ background:#0b1520aa; padding:6px 10px; border-radius:999px; border:1px solid #203040; }
+
+#hearts{ display:flex; gap:6px; }
+.heart{ width:22px; height:22px; border-radius:50%; background:linear-gradient(#ff8fa3,var(--danger)); box-shadow:0 0 18px #ff4d6d55 inset; border:1px solid #ff9db0; }
+.heart.empty{ background:linear-gradient(#3a3f46,#222830); border-color:#2c3138; box-shadow:none; }
+
+#game{
+  position:absolute; inset:0; margin:auto; width:min(100vw, 1200px); height:auto; aspect-ratio:16/9;
+  display:block; background:#0a0e14; border:1px solid #182331; border-radius:16px; box-shadow:0 20px 60px #0008;
+}
+
+.overlay{
+  position:fixed; inset:0; display:grid; place-items:center; background:rgba(3,6,10,0.55); backdrop-filter: blur(4px); z-index:20;
+}
+.hidden{ display:none !important; }
+.panel{
+  width:min(90vw,560px); background:var(--card); border:1px solid #213241; border-radius:16px; padding:24px; text-align:center;
+  box-shadow:0 30px 80px #0008;
+}
+.panel h2{ margin:0 0 8px 0; }
+.panel p{ margin:0 0 14px 0; opacity:.9; }
+.buttons{ display:flex; gap:10px; justify-content:center; }
+.btn{
+  padding:10px 16px; border-radius:999px; border:1px solid #27445a; background:#0f1b27; color:var(--text); font-weight:700; cursor:pointer;
+  transition: transform .06s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); background:#122233; }
+.btn:active{ transform: translateY(1px) scale(.99); }
+.btn.primary{ border-color:#0ea5b5; background:linear-gradient(180deg,#0a2b3a,#0f3a52); }
+.hint{ color:#b0c6d8; }
+
+/* Responsivo */
+@media (max-width:600px){
+  .title{ font-size:18px; }
+  .stats span{ font-size:14px; padding:5px 8px; }
+}

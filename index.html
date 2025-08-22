@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zombie Shooter 2D</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <div class="left">
+        <h1 class="title">🧟‍♂️ Zombie Shooter 2D</h1>
+        <div class="stats">
+          <span id="score">Puntos: 0</span>
+          <span id="best">Mejor: 0</span>
+          <span id="wave">Oleada: 1</span>
+        </div>
+      </div>
+      <div class="right">
+        <div id="hearts" aria-label="Salud"></div>
+      </div>
+    </div>
+
+    <canvas id="game" width="960" height="540"></canvas>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="panel">
+        <h2 id="overlay-title">Zombie Shooter 2D</h2>
+        <p id="overlay-text">
+          Mueve con WASD, apunta con el mouse y dispara con clic o ESPACIO. Evita que te toquen.
+        </p>
+        <div class="buttons">
+          <button id="btn-play" class="btn primary">Jugar</button>
+          <button id="btn-restart" class="btn hidden">Reintentar</button>
+        </div>
+        <small class="hint">Consejo: ¡Los zombis se vuelven más rápidos y aparecen más!</small>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
